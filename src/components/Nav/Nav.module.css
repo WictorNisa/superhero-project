@@ -1,0 +1,19 @@
+.nav {
+  background-color: white;
+  width: 100vw;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkList {
+  
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
