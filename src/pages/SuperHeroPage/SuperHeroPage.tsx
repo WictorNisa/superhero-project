@@ -1,9 +1,29 @@
-
+import { useState } from "react";
+import SearchForm from "../../components/SearchForm/SearchForm";
+import { fetchDataByName } from "../../services/ApiSearchFetch";
 
 const SuperHeroPage = () => {
-  return (
-    <div>Lookup your favourite superhero chicken on the corn on the corn cane ummmmhmm</div>
-  )
-}
+  const [searchInput, setSearchInput] = useState<string>("");
+  
 
-export default SuperHeroPage
+  const onSubmitHandle = (searchQuery: string, e: any) => {
+    e.preventDefault();
+    fetchDataByName(searchQuery).then((res) => {
+        setSearchInput(res)
+        console.log(searchInput);
+      });
+  };
+  return (
+    <>
+      <section>
+        Lookup your favourite superhero chicken on the corn on the corn cane
+        ummmmhmm
+      </section>
+      <div>
+        <SearchForm onSubmitHandle={onSubmitHandle} />
+      </div>
+    </>
+  );
+};
+
+export default SuperHeroPage;
