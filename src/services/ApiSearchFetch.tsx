@@ -4,8 +4,9 @@ const BASE_URL = "https://superheroapi.com/api/";
 
 export const fetchDataByName = async (name: string) => {
   try {
-    const response =
-      await fetch(`https://www.superheroapi.com/api.php/dbee67cfeb85944498c21189ae4544b7/search/${name}`);
+    const response = await fetch(
+      `https://www.superheroapi.com/api.php/dbee67cfeb85944498c21189ae4544b7/search/${name}`
+    );
     const data = await response.json();
     return data;
   } catch (error) {

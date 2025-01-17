@@ -1,17 +1,17 @@
 import { useState } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import { fetchDataByName } from "../../services/ApiSearchFetch";
+import HeroDisplay from "../../components/HeroDisplay/HeroDisplay";
 
 const SuperHeroPage = () => {
   const [searchInput, setSearchInput] = useState<string>("");
-  
 
   const onSubmitHandle = (searchQuery: string, e: any) => {
     e.preventDefault();
     fetchDataByName(searchQuery).then((res) => {
-        setSearchInput(res)
-        console.log(searchInput);
-      });
+      setSearchInput(res);
+      
+    });
   };
   return (
     <>
@@ -21,6 +21,7 @@ const SuperHeroPage = () => {
       </section>
       <div>
         <SearchForm onSubmitHandle={onSubmitHandle} />
+        <HeroDisplay searchInput={searchInput}/>
       </div>
     </>
   );
