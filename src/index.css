@@ -1,1 +1,5 @@
 @import url('./styles/reset.module.css');
+body{
+    box-sizing: border-box;
+    height: 100vh;
+}

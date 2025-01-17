@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./SearchForm.module.css";
 
 type SearchFormProps = {
   onSubmitHandle: (
@@ -12,6 +13,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmitHandle }) => {
 
   return (
     <form
+      className={styles.searchform}
       onSubmit={(e) => {
         e.preventDefault();
         onSubmitHandle(userInput, e);
