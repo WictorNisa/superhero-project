@@ -1,12 +1,9 @@
-const BASE_URL = "https://superheroapi.com/api/";
-// const API_KEY = process.env.REACT_APP_API_KEY;
-// dbee67cfeb85944498c21189ae4544b7
+const baseURL = "https://superheroapi.com/api.php/";
+const API_KEY = import.meta.env.VITE_SUPER_HERO_API_KEY;
 
-export const fetchDataByName = async (name: string) => {
+export const fetchFromAPI = async (name: string) => {
   try {
-    const response = await fetch(
-      `https://www.superheroapi.com/api.php/dbee67cfeb85944498c21189ae4544b7/search/${name}`
-    );
+    const response = await fetch(`${baseURL}${API_KEY}/search/${name}`);
     const data = await response.json();
     return data;
   } catch (error) {

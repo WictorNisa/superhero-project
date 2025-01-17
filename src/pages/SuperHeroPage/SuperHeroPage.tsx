@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
-import { fetchDataByName } from "../../services/ApiSearchFetch";
+import { fetchFromAPI } from "../../services/ApiSearchFetch";
 import HeroDisplay from "../../components/HeroDisplay/HeroDisplay";
 
 const SuperHeroPage = () => {
@@ -8,9 +8,8 @@ const SuperHeroPage = () => {
 
   const onSubmitHandle = (searchQuery: string, e: any) => {
     e.preventDefault();
-    fetchDataByName(searchQuery).then((res) => {
+    fetchFromAPI(searchQuery).then((res) => {
       setSearchInput(res);
-      
     });
   };
   return (
@@ -21,7 +20,7 @@ const SuperHeroPage = () => {
       </section>
       <div>
         <SearchForm onSubmitHandle={onSubmitHandle} />
-        <HeroDisplay searchInput={searchInput}/>
+        <HeroDisplay searchInput={searchInput} />
       </div>
     </>
   );
