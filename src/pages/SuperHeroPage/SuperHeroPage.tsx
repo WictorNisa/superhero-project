@@ -2,6 +2,7 @@ import { useState } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import { fetchFromAPI } from "../../services/ApiSearchFetch";
 import HeroDisplay from "../../components/HeroDisplay/HeroDisplay";
+import styles from "./SuperHeroPage.module.css";
 
 const SuperHeroPage = () => {
   const [searchInput, setSearchInput] = useState<string>("");
@@ -14,14 +15,14 @@ const SuperHeroPage = () => {
   };
   return (
     <>
-      <section>
-        Lookup your favourite superhero chicken on the corn on the corn cane
-        ummmmhmm
+      <section className={styles.s1}>
+        <div>
+          {/* Lookup your favourite superhero chicken on the corn on the corn cane
+          ummmmhmm */}
+          <SearchForm onSubmitHandle={onSubmitHandle} />
+          <HeroDisplay searchInput={searchInput} />
+        </div>
       </section>
-      <div>
-        <SearchForm onSubmitHandle={onSubmitHandle} />
-        <HeroDisplay searchInput={searchInput} />
-      </div>
     </>
   );
 };
