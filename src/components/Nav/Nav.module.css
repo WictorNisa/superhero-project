@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.navLogo{
+  height: 100%;
+}
+
 .linkList {
   width: 40%;
   height: 100%;

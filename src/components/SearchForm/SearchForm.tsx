@@ -19,7 +19,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmitHandle }) => {
         onSubmitHandle(userInput, e);
       }}
     >
-      <label htmlFor="search-name">Search for your favourite superhero</label>
+      <label htmlFor="search-name">Search for your favorite superhero</label>
       <input
         type="text"
         id="search-name"
