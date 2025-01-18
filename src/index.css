@@ -1,4 +1,10 @@
 @import url('./styles/reset.module.css');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+*{
+    font-family: 'Abel', Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body{
     box-sizing: border-box;
     height: 100vh;
