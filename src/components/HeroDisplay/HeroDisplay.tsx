@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import HeroCard from "../HeroCard/HeroCard";
 import styles from "./HeroDisplay.module.css";
 
-
 const HeroDisplay = ({ searchInput }) => {
   const [superHeroes, setSuperheroes] = useState([]);
 
@@ -14,11 +13,13 @@ const HeroDisplay = ({ searchInput }) => {
 
   return (
     <section className={styles.HeroDisplayContainer}>
-      {superHeroes.length > 0 ? (
-        superHeroes.map((hero) => <HeroCard key={hero.id} hero={hero} />)
-      ) : (
-        <p>no heroes found</p>
-      )}
+      <div className={styles.HeroDisplayInnerContainer}>
+        {superHeroes.length > 0 ? (
+          superHeroes.map((hero) => <HeroCard key={hero.id} hero={hero} />)
+        ) : (
+          <p>no heroes found</p>
+        )}
+      </div>
     </section>
   );
 };
