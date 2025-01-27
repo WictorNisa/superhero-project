@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import HeroCard from "../HeroCard/HeroCard";
 import styles from "./HeroDisplay.module.css";
 
-const HeroDisplay = ({ searchInput }) => {
+const HeroDisplay = ({ searchInput }: { searchInput: string }) => {
   const [superHeroes, setSuperheroes] = useState([]);
 
   useEffect(() => {

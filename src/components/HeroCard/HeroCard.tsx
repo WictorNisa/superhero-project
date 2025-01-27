@@ -13,7 +13,11 @@ interface HeroCardProps {
 }
 
 const HeroCard = ({ hero }: HeroCardProps) => {
-  console.log(hero);
+  // console.log(hero);
+
+  const heroID = hero.id;
+  console.log(heroID);
+
   const hasAliases =
     Array.isArray(hero.biography.aliases) &&
     hero.biography.aliases.length > 0 &&
