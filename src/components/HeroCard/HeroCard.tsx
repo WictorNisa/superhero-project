@@ -1,41 +1,34 @@
 import styles from "./HeroCard.module.css";
 
 interface Hero {
+  id: string;
   name: string;
   image: {
     url: string;
   };
-  aliases: string[];
+  biography: {
+    aliases: string[];
+  };
 }
 
-interface HeroCardProps {
+const HeroCard = ({
+  hero,
+  onFetchHero,
+}: {
   hero: Hero;
-}
-
-const HeroCard = ({ hero }: HeroCardProps) => {
-  // console.log(hero);
-
-  const heroID = hero.id;
-  console.log(heroID);
-
-  const hasAliases =
-    Array.isArray(hero.biography.aliases) &&
-    hero.biography.aliases.length > 0 &&
-    !(hero.biography.aliases.length === 1 && hero.biography.aliases[0] === "-");
-
+  onFetchHero: (heroID: string) => void;
+}) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
-        {hasAliases ? (
-          <p className={styles.aliasesText}>{hero.biography.aliases[0]}</p> // Display the first alias
-        ) : (
-          <p className={styles.aliasesText}>No aliases known</p> // Fallback message
-        )}
         <img src={hero.image.url} alt={hero.name} />
         <h1>{hero.name}</h1>
       </div>
       <div className={styles.detailsContainer}>
-        <button className={styles.detailsButton}>
+        <button
+          className={styles.detailsButton}
+          onClick={() => onFetchHero(hero.id)}
+        >
           <h2>More details</h2>
         </button>
       </div>
