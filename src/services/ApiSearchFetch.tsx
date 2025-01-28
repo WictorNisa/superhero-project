@@ -6,7 +6,6 @@ export const fetchByName = async (searchTerm: string) => {
   try {
     const response = await fetch(`${baseURL}${API_KEY}/search/${searchTerm}`);
     const data = await response.json();
-    console.log("API Response:", data); // Log the response for debugging
     return data;
   } catch (error) {
     console.log(`There was an error fetching the data: ${error}`);
