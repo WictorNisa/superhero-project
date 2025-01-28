@@ -1,23 +1,21 @@
-import { useState, useEffect } from "react";
 import HeroCard from "../HeroCard/HeroCard";
 import styles from "./HeroDisplay.module.css";
 
-const HeroDisplay = ({ searchInput }) => {
-  const [superHeroes, setSuperheroes] = useState([]);
-
-  useEffect(() => {
-    if (searchInput && searchInput.results) {
-      setSuperheroes(searchInput.results);
-    }
-  }, [searchInput]);
+const HeroDisplay: React.FC<{
+  searchInput: object[];
+  onFetchHero: (heroID: string) => void;
+}> = ({ searchInput, onFetchHero }) => {
+  const heroes = searchInput?.results || [];
 
   return (
     <section className={styles.HeroDisplayContainer}>
       <div className={styles.HeroDisplayInnerContainer}>
-        {superHeroes.length > 0 ? (
-          superHeroes.map((hero) => <HeroCard key={hero.id} hero={hero} />)
+        {heroes.length > 0 ? (
+          heroes.map((hero: string[]) => (
+            <HeroCard key={hero.id} hero={hero} onFetchHero={onFetchHero} />
+          ))
         ) : (
-          <p>no heroes found</p>
+          <p>No heroes found</p>
         )}
       </div>
     </section>
