@@ -1,11 +1,13 @@
-@import url('./styles/reset.module.css');
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url("./styles/reset.module.css");
+/* @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap"); */
 
-*{
-    font-family: 'Abel', Verdana, Geneva, Tahoma, sans-serif;
+
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
 }
-
-body{
-    box-sizing: border-box;
-    height: 100vh;
+@font-face {
+  font-family: 'Hero';
+  src: url('./assets/fonts/Masked%20Hero.ttf') format('truetype'); /* Use %20 for space in URL */
 }

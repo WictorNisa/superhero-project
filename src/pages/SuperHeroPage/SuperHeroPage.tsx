@@ -32,7 +32,7 @@ const SuperHeroPage = () => {
 
   return (
     <>
-      <section className={styles.s1}>
+      <section className={styles.superHeroPageContainer}>
         <div>
           <SearchForm onSubmitHandle={onSubmitHandle} />
           <HeroDisplay searchInput={searchInput} onFetchHero={onClickHandle} />

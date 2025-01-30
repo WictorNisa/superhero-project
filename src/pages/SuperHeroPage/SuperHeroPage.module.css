@@ -1,4 +1,9 @@
-.s1 {
-    box-sizing: border-box;
+.superHeroPageContainer{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 80px;
+    height: 100vh;
+    width: 100vw;
 }

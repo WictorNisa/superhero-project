@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./RandomCard.module.css";
-import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import DetailsCard from "../DetailsCard/DetailsCard.tsx";
 
 interface Hero {
@@ -35,31 +35,42 @@ const RandomCard = ({
 }) => {
   const [showDetails, setShowDetails] = useState(false);
 
-  const handleDetailsClick = () => {
-    setShowDetails(true);
-  };
-
-  const handleCloseDetails = () => {
-    setShowDetails(false);
-  };
-
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
-        <img src={hero.image.url} alt={hero.name} />
-        <h1>{hero.name}</h1>
+        
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={hero.id}
+            src={hero.image.url}
+            alt={hero.name}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className={styles.heroImage}
+          />
+        </AnimatePresence>
+        <h1 className={styles.heroName}>{hero.name}</h1>
       </div>
+
       <div className={styles.detailsContainer}>
-        <button className={styles.detailsButton} onClick={handleDetailsClick}>
+        <motion.button
+          className={styles.detailsButton}
+          onClick={() => setShowDetails(true)}
+        >
           More details
-        </button>
-        <button className={styles.newHeroButton} onClick={onFetchNewHero}>
-          New Random Hero
-        </button>
+        </motion.button>
+        <motion.button
+          className={styles.newHeroButton}
+          onClick={onFetchNewHero}
+        >
+          Random
+        </motion.button>
       </div>
 
       {showDetails && (
-        <DetailsCard heroDetails={hero} onClose={handleCloseDetails} />
+        <DetailsCard heroDetails={hero} onClose={() => setShowDetails(false)} />
       )}
     </div>
   );

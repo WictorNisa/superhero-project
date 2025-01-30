@@ -1,23 +1,24 @@
 .cardContainer {
-  background-color: grey;
-  width: 20%;
-  height: 60vh;
+  width: 50%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   border: 1px solid black;
+  margin: auto;
+  position: relative;
 }
 
 .aliasesText {
   font-size: 1.5rem;
   position: absolute;
-  top: 10px; 
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  z-index: 2; 
+  z-index: 2;
   text-align: center;
 }
 
@@ -29,38 +30,79 @@
   text-align: center;
   text-transform: uppercase;
   position: absolute;
-  bottom: 15%; 
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 2; /* Ensures text appears above the overlay */
 }
 
 .imageContainer {
-  background-color: grey;
+  
+  width: 100%;
+  height: 80%;
+  margin: 0 auto auto auto;
+  position: relative;
+  overflow: hidden; /* Ensures the overlay doesn't spill out */
+}
+
+.imageContainer h1 {
+  font-family: "Oswald", serif;
+  text-transform: uppercase;
+  width: 100%;
+  letter-spacing: 3px;
+}
+
+.imageContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: relative;
+  background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+  z-index: 1; /* Ensures it sits above the image but below text */
 }
 .cardContainer img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  position: relative;
+  z-index: 0; /* Ensures image stays beneath the overlay */
 }
 
-.detailsContainer{
-  background-color: white;
+.detailsContainer {
   z-index: 10;
   width: 100%;
   height: 10%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.detailsButton, .newHeroButton{
-  width: 100%;
+.detailsButton,
+.newHeroButton {
+  font-family: "Oswald", serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  width: 40%;
+  height: 100%;
   outline: none;
-  border: none;
+  color: #db5461;
+  border: 1px solid #db5461;
   background: transparent;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(229, 9, 9, 0.9);
+}
+
+
+.detailsButton:hover, .newHeroButton:hover {
+  background: rgba(219, 84, 97, 0.1);
+  border-color: white;
+  color: white;
+  box-shadow: 0px 6px 12px rgba(219, 84, 97, 0.6);
+}
+
+.detailsButton:active, .newHeroButton:active {
+  box-shadow: 0px 2px 6px rgba(219, 84, 97, 0.4);
 }
