@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
-
+import { motion } from "framer-motion";
 const Nav = () => {
+  
+
+const navLinks = ["Home", "About", "Contact"];
   return (
     <nav className={styles.nav}>
-      <img
-        className={styles.navLogo}
-        src="./src/assets/img/superherodb_logo.svg"
-        alt="logo"
-      />
-      <ul className={styles.linkList}>
-        <li>
+      {/* Temporary until we find a better logo */}
+      <h1>SupeLore</h1>
+      <ul className={styles.navList}>
+        <li className={styles.listItem}>
           <Link to="/">Home</Link>
         </li>
 
-        <li>
+        <li className={styles.listItem}>
           <Link to="/superheropage">Superhero gallery</Link>
         </li>
 
-        <li>
+        <li className={styles.listItem}>
           <Link to="/favourites">Favourites</Link>
         </li>
       </ul>

@@ -16,10 +16,40 @@
   height: 100%;
 }
 
-.linkList {
+.navList {
   width: 40%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.listItem a {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 1px;
+  padding: 0 10px;
+}
+
+.listItem a::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(54, 54, 54); /* Change this to your desired underline color */
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.3s ease-in-out;
+}
+
+.listItem a:hover::after {
+  width: 100%;
+}
+
+.listItem a:hover {
+  color: grey; /* Change this to any hover color for the link text */
 }
