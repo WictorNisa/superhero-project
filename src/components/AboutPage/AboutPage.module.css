@@ -1,7 +1,131 @@
-.aboutPageContainer{
-    height: 80vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.aboutPageContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.aboutLeftContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  height: 100%;
+}
+
+.aboutLeftContainer h1 {
+  font-size: 3rem;
+  font-family: Hero;
+  font-weight: lighter;
+  letter-spacing: 10px;
+  width: 100%;
+  margin: 1rem auto 0.5rem 2rem;
+}
+
+.aboutLeftContainer h2 {
+  font-size: 2rem;
+  margin: 0 auto 0.5rem 2rem;
+  color: #db5461;
+  font-family: "Oswald", serif;
+}
+
+.aboutLeftContainer p {
+  font-size: 1.5rem;
+  margin: 1rem auto 1rem 2rem;
+  font-family: "Oswald", serif;
+  width: 80%;
+}
+
+.aboutLeftContainer h3 {
+  font-size: 2rem;
+  margin: 0 0 0 2rem;
+  font-family: "Oswald", serif;
+}
+
+.aboutLeftContainer ul {
+  list-style: none;
+  padding-left: 2rem;
+  margin: 0 auto 0 2rem;
+}
+
+.aboutLeftContainer ul li {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  font-family: "Oswald", serif;
+}
+
+.aboutLeftContainer span {
+  color: #db5461;
+}
+
+.aboutRightContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.aboutRightContainer h2 {
+  font-size: 3rem;
+  font-family: Hero;
+  font-weight: lighter;
+  letter-spacing: 10px;
+  width: 100%;
+  margin: 1rem auto 0.5rem 2rem;
+}
+
+.aboutRightContainer p {
+  font-size: 1.5rem;
+  margin: 1rem auto 1rem 2rem;
+  font-family: "Oswald", serif;
+  width: 90%;
+}
+
+.aboutRightContainer h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0 2rem;
+  font-family: "Oswald", serif;
+}
+
+.aboutRightContainer ul {
+  list-style: none;
+  padding-left: 2rem;
+  margin: 0 auto 0 2rem;
+}
+
+.aboutRightContainer ul li {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  font-family: "Oswald", serif;
+}
+
+.aboutRightContainer span {
+  color: #db5461;
+}
+
+.aboutRightContainer h4 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0 2rem;
+  font-family: "Oswald", serif;
+}
+
+.contactParagraph {
+  font-size: 1rem;
+  margin: 1rem 0 0 2rem;
+  font-family: "Oswald", serif;
+}
+
+.aboutButton {
+  margin: 2rem auto auto auto;
+  height: 50px;
+  width: 200px;
+  border: 1px solid #db5461;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 2px rgba(229, 9, 9, 0.2);
+  color: #db5461;
 }

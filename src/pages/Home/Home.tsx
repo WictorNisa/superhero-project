@@ -5,6 +5,7 @@ import styles from "./Home.module.css";
 import Reveal from "../../components/Reveal/Reveal";
 import { Link } from "react-router";
 import AboutPage from "../../components/AboutPage/AboutPage";
+import DividerQuotePage from "../../components/DividerQuotePage/DividerQuotePage";
 
 interface HeroData {
   id: string;
@@ -55,6 +56,7 @@ const Home = () => {
         {heroData && <RandomCard hero={heroData} onFetchNewHero={fetchData} />}
       </div>
     </section>
+    <DividerQuotePage/>
     <AboutPage/>
     </main>
   );
