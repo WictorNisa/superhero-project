@@ -24,7 +24,7 @@
 }
 
 .innerIntroContainer h1 {
-  font-size: 3rem;
+  font-size: 4rem;
 
   font-family: Hero;
   font-weight: lighter;
@@ -33,7 +33,7 @@
 }
 
 .innerIntroContainer h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-top: 1rem;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .innerIntroContainer p {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   margin: 1rem auto;
   font-family: "Oswald", serif;
 }

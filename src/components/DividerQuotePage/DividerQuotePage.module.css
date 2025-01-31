@@ -1,22 +1,44 @@
-.dividerQuotePageContainer{
-    height: 60vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('../../assets/img/divider-img.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.dividerQuotePageContainer {
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../assets/img/divider-img.jpg"), linear-gradient(to bottom, #db5461, black, #db5461);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 100;
 }
 
-.dividerInnerContainer{
-    width: 50%;
-    height: 50%;
-    background-color: azure;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.dividerInnerContainer {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.533);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #db5461;
+}
+
+.quoteContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #db5461;
+  text-align: center;
+}
+
+.quoteContainer p {
+  font-size: 1.5rem;
+  width: 90%;
+  font-family: "Oswald", serif;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  color: white;
 }
