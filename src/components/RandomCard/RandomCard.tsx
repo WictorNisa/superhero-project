@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./RandomCard.module.css";
 import { motion, AnimatePresence } from "framer-motion";
-import DetailsCard from "../DetailsCard/DetailsCard.tsx";
-import FavoriteButton from "../FavoriteButton/FavoriteButton.tsx";
+import DetailsCard from "../DetailsCard/DetailsCard";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import { Hero } from "../../types/heroTypes";
 
 const RandomCard = ({
@@ -13,7 +13,6 @@ const RandomCard = ({
   onFetchNewHero: () => void;
 }) => {
   const [showDetails, setShowDetails] = useState(false);
-
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
@@ -31,7 +30,6 @@ const RandomCard = ({
         </AnimatePresence>
         <h1 className={styles.heroName}>{hero.name}</h1>
       </div>
-
       <div className={styles.detailsContainer}>
         <motion.button
           className={styles.detailsButton}
@@ -45,10 +43,8 @@ const RandomCard = ({
         >
           Random
         </motion.button>
-        {/* Pass the hero id as a string */}
         <FavoriteButton heroId={hero.id} />
       </div>
-
       {showDetails && (
         <DetailsCard heroDetails={hero} onClose={() => setShowDetails(false)} />
       )}

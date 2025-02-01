@@ -2,7 +2,7 @@ import React from "react";
 import IconButton from "@mui/material/IconButton";
 import Favorite from "@mui/icons-material/Favorite";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
-import { useFavorites } from "../../contexts/FavoritesContext"; // Adjust the path as needed
+import { useFavorites } from "../../contexts/FavoritesContext";
 
 type FavoriteButtonProps = {
   heroId: string;
@@ -10,7 +10,6 @@ type FavoriteButtonProps = {
 
 const FavoriteButton: React.FC<FavoriteButtonProps> = ({ heroId }) => {
   const { toggleFavorite, isFavorite } = useFavorites();
-
   return (
     <IconButton
       onClick={() => toggleFavorite(heroId)}
