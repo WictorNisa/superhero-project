@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./DetailsCard.module.css";
+import FavoriteButton from "../../components/FavoriteButton/FavoriteButton.tsx";
 
 const DetailsCard: React.FC<{
   heroDetails: any;
@@ -18,6 +19,7 @@ const DetailsCard: React.FC<{
         <button onClick={onClose} className={styles.closeButton}>
           Close
         </button>
+        <FavoriteButton heroId={heroDetails.id} />
       </div>
 
       {/* Image and Powerstats */}
@@ -32,18 +34,22 @@ const DetailsCard: React.FC<{
 
         <div className={styles.powerstatsContainer}>
           <h4>Power Stats</h4>
-          {Object.entries(powerstats).map(([stat, value]) => (
-            <div key={stat} className={styles.powerstat}>
-              <span className={styles.statName}>{stat}</span>
-              <div className={styles.barContainer}>
-                <div
-                  className={styles.bar}
-                  style={{ width: `${value}%` }}
-                ></div>
-                <span className={styles.value}>{value}</span>
+          {Object.entries(powerstats).map(([stat, value]) => {
+            const numericValue = Number(value); // Cast value to number
+
+            return (
+              <div key={stat} className={styles.powerstat}>
+                <span className={styles.statName}>{stat}</span>
+                <div className={styles.barContainer}>
+                  <div
+                    className={styles.bar}
+                    style={{ width: `${numericValue}%` }}
+                  ></div>
+                  <span className={styles.value}>{numericValue}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

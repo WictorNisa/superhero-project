@@ -1,8 +1,9 @@
 import HeroCard from "../HeroCard/HeroCard";
 import styles from "./HeroDisplay.module.css";
+import { HeroApiResponse } from "../../types/heroTypes";
 
 const HeroDisplay: React.FC<{
-  searchInput: object[];
+  searchInput: HeroApiResponse | null;
   onFetchHero: (heroID: string) => void;
 }> = ({ searchInput, onFetchHero }) => {
   const heroes = searchInput?.results || [];
@@ -11,7 +12,7 @@ const HeroDisplay: React.FC<{
     <section className={styles.HeroDisplayContainer}>
       <div className={styles.HeroDisplayInnerContainer}>
         {heroes.length > 0 ? (
-          heroes.map((hero: string[]) => (
+          heroes.map((hero) => (
             <HeroCard key={hero.id} hero={hero} onFetchHero={onFetchHero} />
           ))
         ) : (
