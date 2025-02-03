@@ -84,12 +84,6 @@ const AboutPage = () => {
             with us and become part of our growing community.
           </p>
         </Reveal>
-        
-          <button className={styles.aboutButton}>
-            <Link to="contact" />
-            Contact
-          </button>
-        
       </div>
     </section>
   );

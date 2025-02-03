@@ -10,6 +10,12 @@
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.438);
+}
+
+.nav h1 {
+  font-family: "Hero";
+  font-size: 1.5rem;
 }
 
 .navLogo {
@@ -52,4 +58,16 @@
 
 .listItem a:hover {
   color: #CA2B3B; 
+}
+
+.toggleButton{
+  text-transform: uppercase;
+  height: 50px;
+  width: auto;
+  padding: 0 1rem;
+  cursor: pointer;
+  border: 1px solid #db5461;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 2px rgba(229, 9, 9, 0.2);
 }
