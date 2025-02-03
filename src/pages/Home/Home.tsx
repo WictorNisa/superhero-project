@@ -28,37 +28,40 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
-    <section className={styles.HomeContainer}>
-      <div className={styles.introContainer}>
-        <div className={styles.innerIntroContainer}>
-          <Reveal>
-            <h1>Welcome to SupeLore</h1>
-          </Reveal>
-          <Reveal>
-            <h2>
-              Your <span className={styles.ultimate}>Ultimate</span> Superhero Database!
-            </h2>
-          </Reveal>
-          <Reveal>
-            <p>
-              Discover heroes, learn their stories, and get inspired by their
-              powers.
-            </p>
-          </Reveal>
-          <button className={styles.ctaButton}>
-            <Link to="/superheropage">To the gallery</Link>
-          </button>
+    <>
+      <section className={styles.HomeContainer}>
+        <div className={styles.introContainer}>
+          <div className={styles.innerIntroContainer}>
+            <Reveal>
+              <h1>Welcome to SupeLore</h1>
+            </Reveal>
+            <Reveal>
+              <h2>
+                Your <span className={styles.ultimate}>Ultimate</span> Superhero
+                Database!
+              </h2>
+            </Reveal>
+            <Reveal>
+              <p>
+                Discover heroes, learn their stories, and get inspired by their
+                powers.
+              </p>
+            </Reveal>
+            <button className={styles.ctaButton}>
+              <Link to="/superheropage">To the gallery</Link>
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.randomHeroContainer}>
-        {heroData && <RandomCard hero={heroData} onFetchNewHero={fetchData} />}
-      </div>
-    </section>
-    <DividerQuotePage/>
-    <AboutPage/>
-    </main>
+        <div className={styles.randomHeroContainer}>
+          {heroData && (
+            <RandomCard hero={heroData} onFetchNewHero={fetchData} />
+          )}
+        </div>
+      </section>
+      <DividerQuotePage />
+      <AboutPage />
+    </>
   );
 };
 
